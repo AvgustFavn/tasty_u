@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image:src" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:title" content="Reviews">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon"
+          href="assets/images/58-582870-muffin-cupcake-computer-icons-blueberry-quick-bread-muffin-128x124.png"
+          type="image/x-icon">
+    <meta name="description" content="">
+
+
+    <title>Reviews</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/parallax/jarallax.css">
+    <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Bad+Script:400&display=swap" as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400&display=swap">
+    </noscript>
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap"
+          as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+</head>
+<body>
+
+{% include 'menu.html' %}
+
+<section data-bs-version="5.1" class="video4 cid-tuR1wFNEbi" id="video4-1k">
+
+
+    <div class="container">
+        <div class="title-wrapper mb-5">
+            <h4 class="mbr-section-title mbr-fonts-style mb-0 display-2">
+                <strong>Watch Review Video</strong>
+            </h4>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 video-block">
+                <div class="video-wrapper">
+                    <iframe class="mbr-embedded-video"
+                            src="https://www.youtube.com/embed/_F6hSOlB9-U?rel=0&amp;amp;mute=1&amp;showinfo=0&amp;autoplay=0&amp;loop=0"
+                            width="1280" height="720" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="mbr-description pt-2 mbr-fonts-style display-4">Our sweets on birthday</p>
+            </div>
+            <div class="col-12 col-lg">
+                <div class="text-wrapper">
+                    <h5 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5"><strong>Anna, client</strong></h5>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Duis nulla lorem, placerat et quam sit amet, efficitur blandit felis. Praesent ac ipsum id risus
+                        tincidunt luctus in a est. Nulla vitae est aliquam, pretium nunc eget, luctus arcu. Sed laoreet
+                        auctor nunc, non euismod ipsum tempus a. Integer posuere diam ac purus lacinia, porta ultrices
+                        justo gravida. Vivamus dapibus nulla eu velit lacinia fermentum. Proin fermentum volutpat nisl
+                        commodo suscipit. Integer fringilla euismod ex sit amet mollis. 😄😄😍</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="people3 mbr-embla cid-tuR2sZfIpi" id="people03-1l">
+
+
+    <div class="position-relative text-center">
+        <h3 class="mb-4 mbr-fonts-style display-2"><strong>Clients Feedback</strong></h3>
+
+        <div class="embla" data-skip-snaps="true" data-align="center" data-auto-play-interval="5" data-draggable="true">
+            <div class="embla__viewport container-fluid">
+                <div class="embla__container">
+                    {% for r in revs %}
+                    <div class="embla__slide slider-image item" style="margin-left: 7rem; margin-right: 7rem;">
+                        <div class="user">
+                            <div class="user_image d-flex">
+                                <div class="img-wrapper position-relative">
+                                    <img src="assets/images/anon.png" alt="Mobirise Website Builder">
+                                </div>
+                                <div class="wrap">
+                                    <div class="user_name align-left mbr-fonts-style display-5">
+                                        <strong>{{ r[0] }}</strong>
+                                    </div>
+                                    <div class="user_desk align-left mbr-fonts-style display-7">Client</div>
+                                </div>
+
+
+                            </div>
+                            <div class="user_text mt-3">
+                                <p class="mbr-fonts-style align-left display-4">{{ r[1] }}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <button class="embla__button embla__button--prev">
+                <span class="mobi-mbri mobi-mbri-arrow-prev mbr-iconfont" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden visually-hidden">Previous</span>
+            </button>
+            <button class="embla__button embla__button--next">
+                <span class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form1 cid-tw7DOUpR4A mbr-parallax-background" id="aform1-2l">
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-5 col-form">
+                <div class="text-wrapper">
+
+                    <h2 class="mbr-section-title mbr-fonts-style display-1"><strong>Did u buy already? Text us your
+                        opinion!</strong></h2>
+                </div>
+                <div class="form-container">
+                    <div class="mbr-form">
+                        <form method="POST" data-rcpha_sitekey="" data-rcpha_secretkey=""
+                              class="mbr-form form-with-styler mx-auto" data-verified="">
+                            <div class="row">
+
+                                <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                                    Oops...! some problem!
+                                </div>
+                            </div>
+                            <div class="dragArea row">
+                                <div class="form-wrap">
+                                    <div class="col-12 col-md-4 form-group mb-3" data-for="name">
+                                        <input type="text" name="name" placeholder="Name" data-form-field="name"
+                                               class="form-control" min="2" maxlength="15" value="" id="name-aform1-2l">
+                                    </div>
+                                    <div class="col-12 col-md-4 form-group mb-3" data-for="email">
+                                        <input type="email" name="email" minlength="4" maxlength="20"
+                                               placeholder="Email" data-form-field="email" class="form-control" value=""
+                                               id="email-aform1-2l">
+                                    </div>
+
+                                </div>
+                                <div class="col-12 form-group mb-3" data-for="textarea">
+                                    <textarea name="comm" minlength="5" maxlength="250" placeholder="Your comment"
+                                              data-form-field="textarea" class="form-control"
+                                              id="textarea-aform1-2l"></textarea>
+                                </div>
+                                <div class="mbr-section-btn">
+                                    <button type="submit" class="btn btn-big btn-scale btn-primary display-7">Send
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-7 col-text"></div>
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}
+<section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/parallax/jarallax.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/ytplayer/index.js"></script>
+<script src="assets/playervimeo/vimeo_player.js"></script>
+<script src="assets/embla/embla.min.js"></script>
+<script src="assets/embla/script.js"></script>
+<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+<script src="assets/theme/js/script.js"></script>
+
+
+</body>
+</html>

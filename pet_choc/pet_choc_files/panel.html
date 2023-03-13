@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image:src" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:title" content="Admin panel">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon"
+          href="assets/images/58-582870-muffin-cupcake-computer-icons-blueberry-quick-bread-muffin-128x124.png"
+          type="image/x-icon">
+    <meta name="description" content="">
+
+
+    <title>Admin panel TastyU</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Bad+Script:400&display=swap" as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script:400&display=swap">
+    </noscript>
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap"
+          as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+</head>
+<body>
+
+{% include 'menu.html' %}
+
+<section data-bs-version="5.1" class="tabs2 conferencem4_tabs2 tabs cid-tuRfEBmQQz" id="tabs2-24">
+
+
+    <div class="container">
+        <div class="row title__wrap">
+            <div class="title__block col-sm-12">
+
+                <h2 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Orders</h2>
+            </div>
+
+        </div>
+        <div class="media-container-row">
+            <div class="col-12 col-md-12 plpr_0">
+
+                <div class="tab-content">
+                    {% for p in ord %}
+                    <div aria-labelledby="conference1-tab1" class="tab-pane active" id="conference1-tab1-content"
+                         role="tabpanel">
+                        <div>
+
+
+                            <div class="row wrap">
+                                <div class="col-lg-2 plpr_0 align-items-stretch">
+                                    <p class="text__time mbr-fonts-style display-4"><strong>Price: {{ p[-1] }}$</strong></p>
+
+                                </div>
+                                <div class="col-lg-3 plpr_0 align-items-stretch">
+                                    <p class="mbr-text mbr-fonts-style display-4">{{ p[6] }}<br>
+                                    </p>
+
+                                </div>
+                                <div class="col-lg-3 plpr_0 align-items-stretch">
+                                    <p class="text__author mbr-fonts-style display-4">
+                                        <strong>{{ p[1] }}</strong><br>{{ p[3] }}</p>
+
+                                </div>
+                                <div class="col-lg-2 plpr_0 align-items-stretch">
+                                    <p class="text__hall mbr-fonts-style display-4">{{ p[5] }}</p>
+
+                                </div>
+                                <div class="col-lg-2 plpr_0 align-items-stretch btn__table">
+                                    <div class="mbr-section-btn align-right"><a
+                                            class="btn btn-sm btn-secondary-outline display-4" href="/order_{{ p[0] }}">More Info<span
+                                            class="mobi-mbri mobi-mbri-right mbr-bold mbr-iconfont mbr-iconfont-btn"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="news1 cid-tuRfQ7IxOr" id="news1-25">
+
+
+    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(237, 239, 240);"></div>
+
+    <div class="container">
+        <h2 class="mbr-section-title mbr-fonts-style display-2"><strong>Comments-review</strong></h2>
+
+        <div class="row g-3">
+            {% for r in revs %}
+            <div class="col-12 col-lg-4">
+                <div class="wrapper">
+                    <div class="news-item">
+                        <p class="date mbr-fonts-style m-0 display-7"><a style="color: white"
+                                href="/delete_rev_{{ r[2] }}"><strong>Delete?</strong></a></p>
+                        <div class="news-content">
+                            <h3 class="mbr-fonts-style card-title mb-4 display-5"><strong>{{ r[0] }}</strong></h3>
+                            <p class="mbr-fonts-style mbr-text display-7">{{ r[1] }}</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="col-12 col-lg-4">
+
+            </div>
+
+            <div class="col-12 col-lg-4">
+
+            </div>
+
+            <div class="col-12 col-lg-4">
+
+            </div>
+
+            <div class="col-12 col-lg-4">
+
+            </div>
+
+            <div class="col-12 col-lg-4">
+
+            </div>
+
+            <div class="col-12 col-lg-4">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="content7 cid-tvaCICeZlj" id="content7-27">
+
+
+    <div class="container-fluid">
+        <div class="wrapper">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <div class="content-wrapper">
+                        <p class="mbr-fonts-style title mbr-text mb-3 display-1">My products</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="content-block">
+                        <div class="accordion-content">
+                            <div id="bootstrap-accordion_42" class="panel-group accordionStyles accordion "
+                                 role="tablist" aria-multiselectable="true">
+                                {% for s in sweets%}
+                                <div class="card card1">
+                                    <div class="card-header" role="tab" id="headingOne">
+                                        <a role="button" class="collapsed panel-title" data-toggle="collapse"
+                                           data-bs-toggle="collapse" data-core="" href="#collapse1_42"
+                                           aria-expanded="false" aria-controls="collapse1">
+                                            <h4 class="mbr-fonts-style header-text display-7">{{ s[0] }}</h4>
+                                            <span class="sign mbr-iconfont mobi-mbri-plus inactive"></span>
+
+                                        </a>
+                                    </div>
+                                    <div id="collapse1_42" class="panel-collapse noScroll collapse" role="tabpanel"
+                                         aria-labelledby="headingOne" data-parent="#accordion"
+                                         data-bs-parent="#bootstrap-accordion_42">
+                                        <div class="panel-body pt-4">
+                                            <div class="text">
+                                                <p class="mbr-fonts-style panel-text mbr-text mb-3 display-4"><a href="/delete_sweet_{{ s[1] }}"><strong>DELETE&nbsp; </strong></a>or&nbsp;<a href="/update_sweet_{{ s[1] }}"><strong>Enable or disable a product</strong></a>&nbsp;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                        <h5 class="link-title mbr-fonts-style mt-4 display-4"><a href="/add"><strong>Add new</strong></a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}
+<section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/ytplayer/index.js"></script>
+<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+<script src="assets/mbr-tabs/mbr-tabs.js"></script>
+<script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+<script src="assets/theme/js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.7 (Ubuntu 14.7-0ubuntu0.22.04.1)
+-- Dumped by pg_dump version 14.7 (Ubuntu 14.7-0ubuntu0.22.04.1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: basket; Type: TABLE; Schema: public; Owner: test
+--
+
+CREATE TABLE public.basket (
+    id integer NOT NULL,
+    id_sweet integer,
+    count integer,
+    user_id integer
+);
+
+
+ALTER TABLE public.basket OWNER TO test;
+
+--
+-- Name: basket_id_seq; Type: SEQUENCE; Schema: public; Owner: test
+--
+
+CREATE SEQUENCE public.basket_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.basket_id_seq OWNER TO test;
+
+--
+-- Name: basket_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: test
+--
+
+ALTER SEQUENCE public.basket_id_seq OWNED BY public.basket.id;
+
+
+--
+-- Name: order; Type: TABLE; Schema: public; Owner: test
+--
+
+CREATE TABLE public."order" (
+    id integer NOT NULL,
+    name character varying(20),
+    email character varying(25),
+    phone character varying(25),
+    list_products character varying[],
+    comment character varying(200),
+    status character varying(20),
+    data_of_create date,
+    total_price integer
+);
+
+
+ALTER TABLE public."order" OWNER TO test;
+
+--
+-- Name: order_id_seq; Type: SEQUENCE; Schema: public; Owner: test
+--
+
+CREATE SEQUENCE public.order_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.order_id_seq OWNER TO test;
+
+--
+-- Name: order_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: test
+--
+
+ALTER SEQUENCE public.order_id_seq OWNED BY public."order".id;
+
+
+--
+-- Name: orders_shop; Type: TABLE; Schema: public; Owner: test
+--
+
+CREATE TABLE public.orders_shop (
+    id integer NOT NULL,
+    name character varying(20),
+    email character varying(25),
+    phone character varying(25),
+    list_products character varying[],
+    comment character varying(200),
+    status character varying(20),
+    data_of_create date,
+    total_price integer
+);
+
+
+ALTER TABLE public.orders_shop OWNER TO test;
+
+--
+-- Name: orders_shop_id_seq; Type: SEQUENCE; Schema: public; Owner: test
+--
+
+CREATE SEQUENCE public.orders_shop_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.orders_shop_id_seq OWNER TO test;
+
+--
+-- Name: orders_shop_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: test
+--
+
+ALTER SEQUENCE public.orders_shop_id_seq OWNED BY public.orders_shop.id;
+
+
+--
+-- Name: reviews; Type: TABLE; Schema: public; Owner: test
+--
+
+CREATE TABLE public.reviews (
+    id integer NOT NULL,
+    name character varying(15) NOT NULL,
+    email character varying(20) NOT NULL,
+    comm character varying(250) NOT NULL
+);
+
+
+ALTER TABLE public.reviews OWNER TO test;
+
+--
+-- Name: reviews_id_seq; Type: SEQUENCE; Schema: public; Owner: test
+--
+
+CREATE SEQUENCE public.reviews_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.reviews_id_seq OWNER TO test;
+
+--
+-- Name: reviews_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: test
+--
+
+ALTER SEQUENCE public.reviews_id_seq OWNED BY public.reviews.id;
+
+
+--
+-- Name: sweets; Type: TABLE; Schema: public; Owner: test
+--
+
+CREATE TABLE public.sweets (
+    id integer NOT NULL,
+    name character varying(15) NOT NULL,
+    descr character varying(500) NOT NULL,
+    packaging character varying(15) NOT NULL,
+    price integer NOT NULL,
+    picture_path text,
+    status_presence boolean
+);
+
+
+ALTER TABLE public.sweets OWNER TO test;
+
+--
+-- Name: sweets_id_seq; Type: SEQUENCE; Schema: public; Owner: test
+--
+
+CREATE SEQUENCE public.sweets_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sweets_id_seq OWNER TO test;
+
+--
+-- Name: sweets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: test
+--
+
+ALTER SEQUENCE public.sweets_id_seq OWNED BY public.sweets.id;
+
+
+--
+-- Name: user; Type: TABLE; Schema: public; Owner: test
+--
+
+CREATE TABLE public."user" (
+    id integer NOT NULL,
+    cookie_user character varying(100),
+    ip_user character varying(100)
+);
+
+
+ALTER TABLE public."user" OWNER TO test;
+
+--
+-- Name: user_choc; Type: TABLE; Schema: public; Owner: test
+--
+
+CREATE TABLE public.user_choc (
+    id integer NOT NULL,
+    cookie_user character varying(100),
+    ip_user character varying(100)
+);
+
+
+ALTER TABLE public.user_choc OWNER TO test;
+
+--
+-- Name: user_choc_id_seq; Type: SEQUENCE; Schema: public; Owner: test
+--
+
+CREATE SEQUENCE public.user_choc_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_choc_id_seq OWNER TO test;
+
+--
+-- Name: user_choc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: test
+--
+
+ALTER SEQUENCE public.user_choc_id_seq OWNED BY public.user_choc.id;
+
+
+--
+-- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: test
+--
+
+CREATE SEQUENCE public.user_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_id_seq OWNER TO test;
+
+--
+-- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: test
+--
+
+ALTER SEQUENCE public.user_id_seq OWNED BY public."user".id;
+
+
+--
+-- Name: basket id; Type: DEFAULT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.basket ALTER COLUMN id SET DEFAULT nextval('public.basket_id_seq'::regclass);
+
+
+--
+-- Name: order id; Type: DEFAULT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public."order" ALTER COLUMN id SET DEFAULT nextval('public.order_id_seq'::regclass);
+
+
+--
+-- Name: orders_shop id; Type: DEFAULT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.orders_shop ALTER COLUMN id SET DEFAULT nextval('public.orders_shop_id_seq'::regclass);
+
+
+--
+-- Name: reviews id; Type: DEFAULT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.reviews ALTER COLUMN id SET DEFAULT nextval('public.reviews_id_seq'::regclass);
+
+
+--
+-- Name: sweets id; Type: DEFAULT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.sweets ALTER COLUMN id SET DEFAULT nextval('public.sweets_id_seq'::regclass);
+
+
+--
+-- Name: user id; Type: DEFAULT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);
+
+
+--
+-- Name: user_choc id; Type: DEFAULT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.user_choc ALTER COLUMN id SET DEFAULT nextval('public.user_choc_id_seq'::regclass);
+
+
+--
+-- Data for Name: basket; Type: TABLE DATA; Schema: public; Owner: test
+--
+
+COPY public.basket (id, id_sweet, count, user_id) FROM stdin;
+2	3	3	6
+1	2	3	6
+7	6	6	7
+9	4	1	8
+10	8	2	8
+\.
+
+
+--
+-- Data for Name: order; Type: TABLE DATA; Schema: public; Owner: test
+--
+
+COPY public."order" (id, name, email, phone, list_products, comment, status, data_of_create, total_price) FROM stdin;
+1	fa	ytuyt@yuyug.com	9309567793	{3}	dasfdssfd	created	2023-03-10	90
+2	fa	ytuyt@yuyug.com	9309567793	{3}	dasfdssfd	created	2023-03-10	90
+3	AAAAAAAAAAAAAAAA	avgustfavn@yandex.ru	97676875665456445	{3}	AAAAAAANBOUINBUIONBUIO	created	2023-03-10	90
+\.
+
+
+--
+-- Data for Name: orders_shop; Type: TABLE DATA; Schema: public; Owner: test
+--
+
+COPY public.orders_shop (id, name, email, phone, list_products, comment, status, data_of_create, total_price) FROM stdin;
+7	Harry	dffd@jjsd.com	+16677899902	{{6,6}}	3 E. County Drive Rahway, NJ 07065	new	2023-03-11	330
+8	Dabby	ikmomik@gg.co	+122233565667	{{4,1},{8,2}}	349 Murazik Trail Suite 086 Briachester	cooking	2023-03-13	28
+6	Denis	kitty@yuvyvu.com	+18845435667	{{2,1},{4,1},{6,1}}	9009 Alderwood St. Newport News, VA 23601	paid	2023-03-11	110
+\.
+
+
+--
+-- Data for Name: reviews; Type: TABLE DATA; Schema: public; Owner: test
+--
+
+COPY public.reviews (id, name, email, comm) FROM stdin;
+2	Ammy	byyb@ubibui.com	Vivamus dapibus nulla eu velit lacinia fermentum. Proin fermentum volutpat nisl commodo suscipit. Integer fringilla euismod ex sit amet mollis.😍😍😍
+3	Antony	ybub@yb.co	Nulla vitae est aliquam, pretium nunc eget, luctus arcu. Sed laoreet auctor nunc, non euismod ipsum tempus a. Integer posuere diam ac purus lacinia, porta ultrices justo gravida.
+4	Cisco	yhy@gvybu.com	Pellentesque vel hendrerit arcu. Nulla vitae enim sed purus fringilla dictum quis eu libero. Curabitur at dictum nisl, ut rutrum urna. Integer eget sagittis purus. Nunc vel nibh placerat, porttitor ipsum tincidunt, egestas libero. Curabitur interdum 
+5	Joe	uoihioih@hhb.com	Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam vitae elit quis nibh imperdiet pellentesque quis in nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae  🫶👌
+\.
+
+
+--
+-- Data for Name: sweets; Type: TABLE DATA; Schema: public; Owner: test
+--
+
+COPY public.sweets (id, name, descr, packaging, price, picture_path, status_presence) FROM stdin;
+2	pellentesque eu	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis. 	1	45	aaaaaaaa.jpeg	t
+3	amet nulla	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Pellentesque pulvinar pellentesque habitant morbi tristique senectus.	1	37	hhuju.jpeg	t
+4	Magna delux	amet purus gravida quis blandit turpis cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris.	1 * 250 gr	10	mbr-596x413.jpeg	t
+6	Morbi tristique	morbi tristique senectus et netus et malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas integer eget	1 * 270 gr	55	2-lb-truffles-everyday-84399-128x192.png	t
+7	Anoris toth	cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi leo urna molestie at elementum eu facilisis.	1 * 70 gr	15	mbr-1-596x894.jpeg	t
+8	Choc dedoa	Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra	1 * 50 gr	9	mbr-1-720x1080.jpeg	t
+\.
+
+
+--
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: test
+--
+
+COPY public."user" (id, cookie_user, ip_user) FROM stdin;
+\.
+
+
+--
+-- Data for Name: user_choc; Type: TABLE DATA; Schema: public; Owner: test
+--
+
+COPY public.user_choc (id, cookie_user, ip_user) FROM stdin;
+1	USZOIAP	127.0.0.1
+2	9W6W7D3	127.0.0.1
+3	4SQKL6P	127.0.0.1
+4	VORSR5D	127.0.0.1
+5	TQWZB1D	127.0.0.1
+6	4INS5Z6	127.0.0.1
+7	6XPQMNS	127.0.0.1
+8	UH0T7DD	127.0.0.1
+\.
+
+
+--
+-- Name: basket_id_seq; Type: SEQUENCE SET; Schema: public; Owner: test
+--
+
+SELECT pg_catalog.setval('public.basket_id_seq', 10, true);
+
+
+--
+-- Name: order_id_seq; Type: SEQUENCE SET; Schema: public; Owner: test
+--
+
+SELECT pg_catalog.setval('public.order_id_seq', 3, true);
+
+
+--
+-- Name: orders_shop_id_seq; Type: SEQUENCE SET; Schema: public; Owner: test
+--
+
+SELECT pg_catalog.setval('public.orders_shop_id_seq', 8, true);
+
+
+--
+-- Name: reviews_id_seq; Type: SEQUENCE SET; Schema: public; Owner: test
+--
+
+SELECT pg_catalog.setval('public.reviews_id_seq', 5, true);
+
+
+--
+-- Name: sweets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: test
+--
+
+SELECT pg_catalog.setval('public.sweets_id_seq', 8, true);
+
+
+--
+-- Name: user_choc_id_seq; Type: SEQUENCE SET; Schema: public; Owner: test
+--
+
+SELECT pg_catalog.setval('public.user_choc_id_seq', 8, true);
+
+
+--
+-- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: test
+--
+
+SELECT pg_catalog.setval('public.user_id_seq', 1, false);
+
+
+--
+-- Name: basket basket_pkey; Type: CONSTRAINT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.basket
+    ADD CONSTRAINT basket_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: order order_pkey; Type: CONSTRAINT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public."order"
+    ADD CONSTRAINT order_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: orders_shop orders_shop_pkey; Type: CONSTRAINT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.orders_shop
+    ADD CONSTRAINT orders_shop_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: reviews reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.reviews
+    ADD CONSTRAINT reviews_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sweets sweets_pkey; Type: CONSTRAINT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.sweets
+    ADD CONSTRAINT sweets_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_choc user_choc_pkey; Type: CONSTRAINT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public.user_choc
+    ADD CONSTRAINT user_choc_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user user_pkey; Type: CONSTRAINT; Schema: public; Owner: test
+--
+
+ALTER TABLE ONLY public."user"
+    ADD CONSTRAINT user_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
